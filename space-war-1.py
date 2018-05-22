@@ -72,11 +72,13 @@ EXPLOSION = pygame.mixer.Sound('Assets/Sounds/Explosion3.wav')
 LASER = pygame.mixer.Sound('Assets/Sounds/laser.ogg')
 HIT_SOUND = pygame.mixer.Sound('Assets/Sounds/hit_sound.ogg')
 BOMB_SOUND = pygame.mixer.Sound('Assets/Sounds/Explosion5.wav')
-BACKGROUND_SOUND = pygame.mixer.Sound('Assets/Sounds/Jupiter.ogg')
-START_SOUND = pygame.mixer.Sound('Assets/Sounds/William-Tell-Overture-Finale.ogg')
+#BACKGROUND_SOUND = pygame.mixer.Sound('Assets/Sounds/Jupiter.ogg')
+#START_SOUND = pygame.mixer.music.load('Assets/Sounds/William-Tell-Overture-Finale.ogg')
+#END_SOUND = pygame.mixer.music.load('Assets/Sounds/George Gershwin - An American in Paris.mp3')
 
 
-# Stages
+
+#Stages
 START = 0
 PLAYING = 1
 END = 2
@@ -104,9 +106,6 @@ class Ship(pygame.sprite.Sprite):
             screen.blit(shield_img, (100, 100))
         elif ship.shield == 1:
             screen.blit(shield_img, (50, 100))
-        elif ship.shield == 0:
-            self.kill()
-            #EXPLOSION.play()
 
     def move_left(self):
         self.rect.x -= self.speed
@@ -131,7 +130,6 @@ class Ship(pygame.sprite.Sprite):
                 HIT_SOUND.play()
             elif ship.shield == 0:
                 EXPLOSION.play()
-                
 
         if self.rect.right < 0:
             self.rect.right = 910
@@ -143,13 +141,7 @@ class Ship(pygame.sprite.Sprite):
         if len(hit_list) > 0:
             self.shield = 0
 
-        #if self.shield == 0:
-            #EXPLOSION.play()
-            #self.kill()
-            
-
 class Laser(pygame.sprite.Sprite):
-    
     def __init__(self, image):
         super().__init__()
 
@@ -335,6 +327,9 @@ def setup():
 
     # set stages
     stage = START
+    print("song 1")
+    pygame.mixer.music.load('Assets/Sounds/William-Tell-Overture-Finale.ogg')
+    pygame.mixer.music.play(2)
 
 
 def show_title_screen():
@@ -367,9 +362,6 @@ def show_end():
 def show_stats(player):
     score_text = FONT_MD2.render("Score: " + str(player.score), 1, WHITE)
     screen.blit(score_text, [32, 32])
-    
-    #health_text = FONT_MD2.render("Player health: " + str(ship.shield), 1, WHITE)
-    #screen.blit(health_text, [32, 50])
 
 # Game loop
 setup()
@@ -382,22 +374,21 @@ while not done:
             done = True
         elif event.type == pygame.KEYDOWN:
             if stage == START:
-                #pygame.mixer.music.play()
-                #START_SOUND.play()
                 if event.key == pygame.K_SPACE:
                     stage = PLAYING
+                    print("song 2")
+                    pygame.mixer.music.load('Assets/Sounds/Jupiter.ogg')
+                    pygame.mixer.music.play(2)
             elif stage == PLAYING:
                 if event.key == pygame.K_SPACE:
                     LASER.play()
                     ship.shoot()
             elif stage == END:
-                #BACKGROUND_SOUND.play()
                 if event.key == pygame.K_SPACE:
                     setup()
 
     if stage == PLAYING:
         pressed = pygame.key.get_pressed()
-
         if pressed[pygame.K_LEFT]:
             ship.move_left()
         elif pressed[pygame.K_RIGHT]:
@@ -414,11 +405,14 @@ while not done:
         if stage == PLAYING:
             if len(mobs) == 0:
                 stage = END
+                pygame.mixer.music.load('Assets/Sounds/George Gershwin - An American in Paris.mp3')
+                pygame.mixer.music.play(2)
             elif ship.shield == 0:
                 stage = END
+                pygame.mixer.music.load('Assets/Sounds/George Gershwin - An American in Paris.mp3')
+                pygame.mixer.music.play(2)
     
     # Drawing code (Describe the picture. It isn't actually drawn yet.)
-    #screen.fill(BLACK)
     screen.blit(spacebg, background_rect)
     y1 += 5
     y += 5
