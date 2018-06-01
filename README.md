@@ -31,8 +31,16 @@ This UFO can't hurt you, but hitting it will give you extra points.
 
 ## Different Stages of the Game
 
+Beginning Stage
+
 ![alt-text](https://raw.github.com/achen6159/My-Space-Game/master/screenshots/beginning_screen.PNG "Beginning Stage")
+
+Playing Stage
+
 ![alt-text](https://raw.github.com/achen6159/My-Space-Game/master/screenshots/playing_screen.PNG "Playing Stage")
+
+End Stage
+
 ![alt-text](https://raw.github.com/achen6159/My-Space-Game/master/screenshots/end_screen.PNG "End Stage")
 
 
