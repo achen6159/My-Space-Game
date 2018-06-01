@@ -2,7 +2,7 @@
 
 ## The Executable for this game
 
-https://github.com/achen6159/My-Space-Game/releases
+[I'm an inline-style link](https://github.com/achen6159/My-Space-Game/releases)
 
 ## Object of this game
 
