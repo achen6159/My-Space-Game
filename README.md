@@ -12,7 +12,8 @@ You need to kill all of the mobs before they touch the bottom and destroy you. T
 3. Keep pressing the SPACE bar to shoot at the mobs and UFO, and the arrow keys to move your player around. 
 4. Once you have killed all of the mobs, the game will end. 
 5. If you weren't able to kill all of the mobs and they reach the bottom and touch you, the game will also end. 
-6. Once this happens, there will be an end screen and you can press R to restart the game. 
+6. If you lost all three lives which is represented as the shields, the game will also end. 
+7. Once this happens, there will be an end screen and you can press R to restart the game. 
 
 ## Your ship:
 
