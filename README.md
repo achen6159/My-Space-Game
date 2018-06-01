@@ -20,6 +20,6 @@ Arrow keys - how to move player
 SPACE bar - how to shoot lasers
 R - how to restart the game 
 
-##Objectives
+## Objectives
 
 
