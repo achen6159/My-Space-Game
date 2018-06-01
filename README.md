@@ -2,7 +2,7 @@
 
 ## The Executable for this game
 
-[I'm an inline-style link](https://github.com/achen6159/My-Space-Game/releases)
+[Once you click on this, click on Space_War_Game.exe](https://github.com/achen6159/My-Space-Game/releases)
 
 ## Object of this game
 
