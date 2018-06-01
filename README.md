@@ -2,7 +2,8 @@
 
 ## Object of this game
 
-To kill all of the mobs.
+To kill all of the mobs before they touch the bottom. 
+You can also kill the UFO for extra points. 
 
 ## Controls
 
