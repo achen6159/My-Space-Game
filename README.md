@@ -11,10 +11,12 @@ You need to kill all of the mobs before they touch the bottom and destroy you. T
 ## The Enemies:
 
 These mobs only hurt your health by 1 life. 
+
 ![alt-text](https://raw.github.com/achen6159/My-Space-Game/master/Assets/Images/Enemies/enemyGreen1.png "Green Mob")
 ![alt-text](https://raw.github.com/achen6159/My-Space-Game/master/Assets/Images/Enemies/enemyBlue3.png "Blue Mob")
 
 This UFO can't hurt you, but hitting it will give you extra points. 
+
 ![alt-text](https://raw.github.com/achen6159/My-Space-Game/master/Assets/Images/Enemies/ufoBlue.png "UFO")
 
 ## Controls
