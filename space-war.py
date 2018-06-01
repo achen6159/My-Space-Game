@@ -1,6 +1,14 @@
 # Imports
 import pygame
 import random
+import sys
+import os
+
+if getattr(sys, 'frozen', False):
+    current_path = sys._MEIPASS
+else:
+    current_path = os.path.dirname(__file__)
+
 
 # Initialize game engine
 pygame.init()
@@ -20,7 +28,7 @@ background.fill((250, 250, 250))
 #Background
 theClock = pygame.time.Clock()
 
-spacebg = pygame.image.load('Assets/Images/Backgrounds/star2_giphy.gif')
+spacebg = pygame.image.load(current_path  + '/Assets/Images/Backgrounds/star2_giphy.gif')
 
 background_size = background.get_size()
 background_rect = background.get_rect()
@@ -47,31 +55,31 @@ FRONT_BLUE = (176, 196, 232)
 GREY_BLUE = (29, 77, 155)
 
 # Fonts
-FONT_SM = pygame.font.Font("Assets/Fonts/Transformers Movie.ttf", 24)
-FONT_MD = pygame.font.Font("Assets/Fonts/Transformers Movie.ttf", 32)
-FONT_MD2 = pygame.font.Font("Assets/Fonts/spacewarfont.ttf", 25)
-FONT_LG = pygame.font.Font("Assets/Fonts/Transformers Movie.ttf", 64)
-FONT_LG2 = pygame.font.Font("Assets/Fonts/spacewarfont.ttf", 50)
-FONT_XL = pygame.font.Font("Assets/Fonts/spacewarfont.ttf", 128)
-MY_FONT = pygame.font.Font("Assets/Fonts/Transformers Movie.ttf", 50)
+FONT_SM = pygame.font.Font(current_path  + '/Assets/Fonts/Transformers Movie.ttf', 24)
+FONT_MD = pygame.font.Font(current_path  + '/Assets/Fonts/Transformers Movie.ttf', 32)
+FONT_MD2 = pygame.font.Font(current_path  + '/Assets/Fonts/spacewarfont.ttf', 25)
+FONT_LG = pygame.font.Font(current_path  + '/Assets/Fonts/Transformers Movie.ttf', 64)
+FONT_LG2 = pygame.font.Font(current_path  + '/Assets/Fonts/spacewarfont.ttf', 50)
+FONT_XL = pygame.font.Font(current_path  + '/Assets/Fonts/spacewarfont.ttf', 128)
+MY_FONT = pygame.font.Font(current_path  + '/Assets/Fonts/Transformers Movie.ttf', 50)
 
 # Images
-background = pygame.image.load('Assets/Images/Backgrounds/blue2.png').convert()
-background2 = pygame.image.load('Assets/Images/giphy_stars.gif')
-ship_img = pygame.image.load('Assets/Images/Ships/playerShip2_blue.png')
-laser_img = pygame.image.load('Assets/Images/Lasers/laserBlue01.png')
-mob_img = pygame.image.load('Assets/Images/Enemies/enemyGreen1.png')
-mob_img2 = pygame.image.load('Assets/Images/Enemies/enemyBlue3.png')
-bomb_img = pygame.image.load('Assets/Images/Bombs/laserGreen14.png')
-shield_img = pygame.image.load('Assets/Images/Shields/powerupBlue_shield.png')
-ufo_img = pygame.image.load('Assets/Images/Enemies/ufoBlue.png')
+background = pygame.image.load(current_path  + '/Assets/Images/Backgrounds/blue2.png').convert()
+background2 = pygame.image.load(current_path  + '/Assets/Images/giphy_stars.gif')
+ship_img = pygame.image.load(current_path  + '/Assets/Images/Ships/playerShip2_blue.png')
+laser_img = pygame.image.load(current_path  + '/Assets/Images/Lasers/laserBlue01.png')
+mob_img = pygame.image.load(current_path  + '/Assets/Images/Enemies/enemyGreen1.png')
+mob_img2 = pygame.image.load(current_path  + '/Assets/Images/Enemies/enemyBlue3.png')
+bomb_img = pygame.image.load(current_path  + '/Assets/Images/Bombs/laserGreen14.png')
+shield_img = pygame.image.load(current_path  + '/Assets/Images/Shields/powerupBlue_shield.png')
+ufo_img = pygame.image.load(current_path  + '/Assets/Images/Enemies/ufoBlue.png')
 
 #Sounds
 
-EXPLOSION = pygame.mixer.Sound('Assets/Sounds/Explosion3.wav')
-LASER = pygame.mixer.Sound('Assets/Sounds/laser.ogg')
-HIT_SOUND = pygame.mixer.Sound('Assets/Sounds/hit_sound.ogg')
-BOMB_SOUND = pygame.mixer.Sound('Assets/Sounds/Explosion5.wav')
+EXPLOSION = pygame.mixer.Sound(current_path  + '/Assets/Sounds/Explosion3.wav')
+LASER = pygame.mixer.Sound(current_path  + '/Assets/Sounds/laser.ogg')
+HIT_SOUND = pygame.mixer.Sound(current_path  + '/Assets/Sounds/hit_sound.ogg')
+BOMB_SOUND = pygame.mixer.Sound(current_path  + '/Assets/Sounds/Explosion5.wav')
 
 #Stages
 START = 0
@@ -362,7 +370,7 @@ def setup():
 
     # set stages
     stage = START
-    pygame.mixer.music.load('Assets/Sounds/Jupiter.ogg')
+    pygame.mixer.music.load(current_path  + '/Assets/Sounds/Jupiter.ogg')
     pygame.mixer.music.play(2)
 
 
@@ -412,7 +420,7 @@ while not done:
             if stage == START:
                 if event.key == pygame.K_SPACE:
                     stage = PLAYING
-                    pygame.mixer.music.load('Assets/Sounds/William-Tell-Overture-Finale.ogg')
+                    pygame.mixer.music.load(current_path  + '/Assets/Sounds/William-Tell-Overture-Finale.ogg')
                     pygame.mixer.music.play(2)
             elif stage == PLAYING:
                 if event.key == pygame.K_SPACE:
@@ -440,11 +448,11 @@ while not done:
         if stage == PLAYING:
             if len(mobs) == 0:
                 stage = END
-                pygame.mixer.music.load('Assets/Sounds/George Gershwin - An American in Paris.mp3')
+                pygame.mixer.music.load(current_path  + '/Assets/Sounds/George Gershwin - An American in Paris.mp3')
                 pygame.mixer.music.play(2)
             elif ship.shield == 0:
                 stage = END
-                pygame.mixer.music.load('Assets/Sounds/George Gershwin - An American in Paris.mp3')
+                pygame.mixer.music.load(current_path  + '/Assets/Sounds/George Gershwin - An American in Paris.mp3')
                 pygame.mixer.music.play(2)
     
     # Drawing code (Describe the picture. It isn't actually drawn yet.)
