@@ -10,7 +10,8 @@ You need to kill all of the mobs before they touch the bottom and destroy you. T
 
 ## The Enemies:
 
-
+![alt-text](https://raw.github.com/achen6159/My-Space-Game/master/Assets/Images/enemyGreen1.png "Green Mob")
+![alt-text](https://raw.github.com/achen6159/My-Space-Game/master/Assets/Images/enemyBlue3.png "Blue Mob")
 
 ## Controls
 
